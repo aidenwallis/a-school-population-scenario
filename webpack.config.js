@@ -62,7 +62,7 @@ module.exports = {
 				'NODE_ENV': `"${process.env.NODE_ENV}"`,
 			},
 		}),
-		isProduction ? new ExtractTextPlugin('css/app.[chunkhash].css') : NoopPlugin(),
+		isProduction ? new ExtractTextPlugin('app.css') : NoopPlugin(),
 		isProduction ? new webpack.optimize.UglifyJsPlugin({output: {comments: false} }) : new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoEmitOnErrorsPlugin(),
 	],
