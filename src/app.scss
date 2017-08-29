@@ -1,0 +1,160 @@
+@import '../node_modules/normalize.css/normalize';
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: ($size / 16px) * 1rem;
+}
+
+$brand: #970231;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f1f1f1;
+}
+
+#react-mount {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+}
+
+.shell {
+  margin: auto;
+  width: 700px;
+  min-height: 50px;
+}
+
+.image-center {
+  display: block;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1 {
+  font-weight: 400;
+  @include font-size(26px);
+  margin: 6px 0 8px;
+}
+
+h3 {
+  font-weight: 300;
+  margin: 4px 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #333;
+  @include font-size(18px);
+}
+
+.button {
+  -webkit-appearance: none;
+  cursor: pointer;
+  line-height: 48px;
+  color: #fff;
+  padding: 0 35px;
+  @include font-size(14px);
+  text-align: center;
+  display: inline-block;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  border-radius: 3px;
+  transition: .2s ease;
+  &-block {
+    width: 100%;
+    display: block;
+  }
+  &-red {
+    background: $brand;
+    &:hover {
+      background: lighten($brand, 3);
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 8px rgba(#000, .5);
+  }
+}
+
+.mm-button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 14px -8px;
+  .button-item {
+    padding: 8px;
+    flex-basis: 50%;
+  }
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+input {
+  display: block;
+  outline: none;
+  -webkit-appearance: none;
+  border: 1px solid #dedede;
+  border-radius: 0;
+  width: 100%;
+  padding: 9px;
+  @include font-size(18px);
+  &:focus {
+    border-color: $brand;
+  }
+}
+
+.form-input-errored {
+  background: lighten($brand, 70);
+  border-color: $brand;
+}
+
+.form-error {
+  float: right;
+  color: $brand;
+  @include font-size(12px);
+  padding-top: 6px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 17px;
+  thead {
+    td {
+      border-top: 1px solid #dedede;
+      border-left: 1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+      background: linear-gradient(to bottom, darken(#eee, 1), darken(#eee, 2));
+      padding: 15px 10px;
+      &:last-child {
+        border-right: 1px solid #dedede;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: 12px 10px;
+        background: linear-gradient(to bottom, #eee, darken(#eee, 1));
+        border-left: 1px solid #dedede;
+        border-bottom: 1px solid #dedede;
+        border-top: 1px solid #f1f1f1;
+        &:last-child {
+          border-right: 1px solid #dedede;
+        }
+      }
+    }
+  }
+}
